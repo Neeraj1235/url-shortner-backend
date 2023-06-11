@@ -37,7 +37,8 @@ const forgotPasswordHandler = async (req, res) => {
     const mailDetails = {
       toAddress: savedUser.email,
       mailSubject: "Password Reset Link",
-      mailContent: `Dont worry, just click the following link to reset your password`,
+      mailContent: `Dont worry, just click the following link to reset your password  -   
+      https://urlshortner-frontend.netlify.app/resetPassword/${emailPayLoad}`,
     };
     const mailResponse = await mailerFunc(mailDetails);
 

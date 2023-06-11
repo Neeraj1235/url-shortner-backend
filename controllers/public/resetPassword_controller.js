@@ -52,7 +52,8 @@ const resetPasswordHandler = async (req, res) => {
     const mailDetails = {
       toAddress: pwdUpdatedUser.email,
       mailSubject: "Password Updated Successfully",
-      mailContent: `hi ${pwdUpdatedUser.name}, Well Your account password has been updated recently, if this is not updated by you`,
+      mailContent: `hi ${pwdUpdatedUser.name}, Well Your account password has been updated recently, if this is not updated by you, then your account is hacked, sorry:)
+      (hint:dont worry, just change your email-account's pwd and perform a resetPwd request again...Next time try to remember password,${pwdUpdatedUser.name}***🙃just kidding:)- its our pleasure to help you`,
     };
     await mailerFunc(mailDetails);
     res.send({ msg: "Password successfully updated...", type: "success" });
